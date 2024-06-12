@@ -76,6 +76,12 @@ export class ProductListComponent implements OnInit {
       this.currentCategoryId)
       .subscribe(this.processResult());
     }
+    
+  updatePageSize(pageSize: string) {
+    this.thePageSize = Number(pageSize);
+    this.thePageNumber = 1;
+    this.listProducts();
+  }
 
   processResult(){
     return (data:any) => {
